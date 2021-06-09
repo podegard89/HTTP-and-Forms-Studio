@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+}
+
+#searchTerm {
+    border-color: crimson;
+}
+
+#googleLogo {
+    width: 40px;
+}
+
+img {
+    width: 50px;
+}
+
+#radioGroup {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

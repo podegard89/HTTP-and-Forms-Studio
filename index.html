@@ -8,8 +8,8 @@
 			let searchTerm = document.getElementById("searchTerm");
 
 			form.addEventListener("submit", function () {
-				// check to make sure the user entered a searchTerm
-				if(searchTerm.value === "") {
+				// check to make sure the user entered a NON EMPTY searchTerm
+				if (searchTerm.value === "") {
 					alert("Please enter some text in the search box!!!");
 					event.preventDefault();
 				}
@@ -22,33 +22,37 @@
 			})
 		});
 	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
+	<h1>You could use 4 search pages, or just 1!</h1>
 	<form id="searchForm">
-		<input name="q" type="text" id="searchTerm" />
+		<div>
+			<input name="q" type="text" id="searchTerm" />
+		</div>
 
-		<label>
-			<input type="radio" name="engine" value="https://www.google.com/search" checked/>
-			Google
-		</label>
+		<div id="radioGroup">
+			<label id="google" class="radioButton">
+				<input  type="radio" name="engine" value="https://www.google.com/search" checked />
+				<img id="googleLogo" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="Google Logo">
+			</label>
 
-		<label>
-			<input type="radio" name="engine" value="https://duckduckgo.com/" />
-			DuckDuckGo
-		</label>
+			<label id="duckDuckGo" class="radioButton">
+				<input type="radio" name="engine" value="https://duckduckgo.com/" />
+				<img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="duck logo">
+			</label>
 
-		<label>
-			<input type="radio" name="engine" value="https://www.bing.com/search" />
-			Bing
-		</label>
+			<label id="bing" class="radioButton">
+				<input type="radio" name="engine" value="https://www.bing.com/search" />
+				<img src="https://www.curvearro.com/wp-content/uploads/2020/10/Microsoft-Bing-Banner.jpg" alt="Bing Logo">
+			</label>
 
-		<label>
-			<input type="radio" name="engine" value="https://www.ask.com/web" />
-			Ask
-		</label>
-
+			<label class="radioButton" id="ask">
+				<input type="radio" name="engine" value="https://www.ask.com/web" />
+				<img src="https://1000logos.net/wp-content/uploads/2020/08/Ask-Logo.png" alt="Ask.com Logo">           
+			</label>
+		</div>
 		<!-- <button>Go!</button> -->
 		<input type="submit" value="Go!" />
 	</form>
