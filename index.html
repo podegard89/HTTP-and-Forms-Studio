@@ -8,15 +8,15 @@
 			let searchTerm = document.getElementById("searchTerm");
 
 			form.addEventListener("submit", function () {
-				
-				// set the action in this function
-				// this selector will select an input element that has both a name attribute equalling "engine" and is also checked
-				let radioInputSelector = document.querySelector("input[name=engine]:checked");
-				let searchEngineURL = radioInputSelector.value;
+				// check to make sure the user entered a searchTerm
 				if(searchTerm.value === "") {
 					alert("Please enter some text in the search box!!!");
 					event.preventDefault();
 				}
+				// set the action in this function
+				// this selector will select an input element that has both a name attribute equalling "engine" and is also checked
+				let radioInputSelector = document.querySelector("input[name=engine]:checked");
+				let searchEngineURL = radioInputSelector.value;
 				// use setAttribute method to the action attribute of the form
 				form.setAttribute("action", searchEngineURL);
 			})
