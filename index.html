@@ -3,17 +3,48 @@
 <head>
 	<meta charset="utf-8">
 	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
+		window.addEventListener("load", function () {
+			let form = document.getElementById("searchForm");
+
+			form.addEventListener("submit", function () {
+				// set the action in this function
+				// this selector will select an input element that has both a name attribute equalling "engine" and is also checked
+				let radioInputSelector = document.querySelector("input[name=engine]:checked");
+				let searchEngineURL = radioInputSelector.value;
+				// use setAttribute method
+				form.setAttribute("action", searchEngineURL);
+			})
+		});
 	</script>
 </head>
 
 <body>
 
 	<form id="searchForm">
-    <!-- TODO: add form elements -->
+		<input name="q" type="text" />
+
+		<label>
+			<input type="radio" name="engine" value="https://www.google.com/search" />
+			Google
+		</label>
+
+		<label>
+			<input type="radio" name="engine" value="https://duckduckgo.com/" />
+			DuckDuckGo
+		</label>
+
+		<label>
+			<input type="radio" name="engine" value="https://www.bing.com/search" />
+			Bing
+		</label>
+
+		<label>
+			<input type="radio" name="engine" value="https://www.ask.com/web" />
+			Ask
+		</label>
+
+		<!-- <button>Go!</button> -->
+		<input type="submit" value="Go!" />
 	</form>
 
 </body>
